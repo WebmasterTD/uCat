@@ -78,7 +78,7 @@
 
     "custom/power": {
         "tooltip": false,
-        "on-click": "wlogout &",
+        "on-click": "wlogout -p layer-shell -b2 -T100 -B100 -L250 -R250 -r50 -c50 &",
         "format": ""
     }
 }
