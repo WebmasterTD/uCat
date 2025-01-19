@@ -11,8 +11,8 @@
         "sort-by-name": true,
         "format": " {icon} ",
         "format-icons": {
-            "default": "",
-        },
+            "default": ""
+        }
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -56,7 +56,7 @@
         "format": "{icon}",
         "format-charging": "",
         "format-plugged": "",
-        "format-alt": "{icon}",
+        "format-alt": "{time} {icon}",
         "format-icons": [""]
     },
     "pulseaudio": {
@@ -71,7 +71,7 @@
     "custom/lock": {
         "tooltip": false,
         "on-click": "sh -c '(sleep 0.5s; swaylock --grace 0)' & disown",
-        "format": "",
+        "format": ""
     },
     "custom/power": {
         "tooltip": false,
