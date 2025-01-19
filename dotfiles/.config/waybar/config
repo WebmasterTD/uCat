@@ -5,7 +5,8 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
     "modules-center": ["custom/music"],
-    "modules-right": ["pulseaudio", "backlight", "battery", "clock", "tray", "custom/lock", "custom/power"],
+    "modules-right": ["pulseaudio", "backlight", "tray", "battery", "clock", "tray", "custom/lock", "custom/power"],
+
     "sway/workspaces": {
         "disable-scroll": true,
         "sort-by-name": true,
@@ -24,10 +25,7 @@
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },
-    "tray": {
-        "icon-size": 21,
-        "spacing": 10
-    },
+
     "custom/music": {
         "format": "  {}",
         "escape": true,
@@ -37,15 +35,19 @@
         "on-click": "playerctl play-pause",
         "max-length": 50
     },
-    "clock": {
-        "timezone": "Asia/Dubai",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": " {:%d/%m/%Y}",
-        "format": " {:%H:%M}"
+
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", " "]
+        },
+        "on-click": "pavucontrol"
     },
     "backlight": {
-        "device": "intel_backlight",
         "format": "{icon}",
+        "format-alt": "{icon} {percent}%",
         "format-icons": [""]
     },
     "battery": {
@@ -56,17 +58,17 @@
         "format": "{icon}",
         "format-charging": "",
         "format-plugged": "",
-        "format-alt": "{time} {icon}",
+        "format-alt": "{icon} {capacity}%",
         "format-icons": [""]
     },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%",
-        "format-muted": "",
-        "format-icons": {
-            "default": ["", "", " "]
-        },
-        "on-click": "pavucontrol"
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": " {:%d/%m/%Y}",
+        "format": " {:%H:%M}"
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
     },
     "custom/lock": {
         "tooltip": false,

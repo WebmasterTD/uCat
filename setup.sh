@@ -17,7 +17,7 @@ apt install waybar -y
 apt install fonts-font-awesome -y
 
 
-apt install wofi -y
-
+# apt install wofi -y
+apt install tofi -y
 
 apt install sway-notification-center

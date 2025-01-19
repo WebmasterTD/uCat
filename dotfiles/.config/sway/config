@@ -14,7 +14,9 @@ set $term foot
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu wofi --show drun
+
+# set $menu wofi --show drun
+set $menu tofi-drun | xargs swaymsg exec --
 
 include /etc/sway/config-vars.d/*
 
@@ -140,8 +142,8 @@ include /etc/sway/config-vars.d/*
 #
 # Volume
 #
-    bindsym XF86AudioRaiseVolume exec amixer set 'PCM' 1000+
-    bindsym XF86AudioLowerVolume exec amixer set 'PCM' 1000-
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10%
 
 #
 # Layout stuff:
