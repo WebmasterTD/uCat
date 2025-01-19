@@ -1,18 +1,29 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    // "width": 1280, // Waybar width
-    // Choose the order of the modules
+    "width": 1280,
+
+    // Order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
-    "modules-center": ["custom/music"],
-    "modules-right": ["pulseaudio", "backlight", "tray", "battery", "clock", "tray", "custom/lock", "custom/power"],
+    // "modules-center": ["sway/window"],
+    "modules-right": ["network", "pulseaudio", "backlight", "battery", "clock", "custom/lock", "custom/power"],
 
     "sway/workspaces": {
-        "disable-scroll": true,
-        "sort-by-name": true,
-        "format": " {icon} ",
+        "format": "{icon}",
         "format-icons": {
-            "default": ""
+            "10": "0",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "urgent": "",
+            "focused": "",
+            "default": ""
         }
     },
     "sway/mode": {
@@ -26,29 +37,27 @@
         "tooltip-format": "{app}: {title}"
     },
 
-    "custom/music": {
-        "format": "  {}",
-        "escape": true,
-        "interval": 5,
-        "tooltip": false,
-        "exec": "playerctl metadata --format='{{ title }}'",
-        "on-click": "playerctl play-pause",
-        "max-length": 50
-    },
 
+    "network": {
+        "format-wifi": " {signalStrength}%",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{essid}\n{ipaddr}",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%",
+        "format": "{icon}",
         "format-muted": "",
+        "format-alt": "{icon} {volume}%",
         "format-icons": {
             "default": ["", "", " "]
-        },
-        "on-click": "pavucontrol"
+        }
     },
     "backlight": {
         "format": "{icon}",
         "format-alt": "{icon} {percent}%",
-        "format-icons": [""]
+        "format-icons": ["", ""]
     },
     "battery": {
         "states": {
@@ -56,20 +65,17 @@
             "critical": 15
         },
         "format": "{icon}",
-        "format-charging": "",
+        "format-charging": "{icon}+",
         "format-plugged": "",
         "format-alt": "{icon} {capacity}%",
-        "format-icons": [""]
+        "format-icons": ["", "", "", "", ""]
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": " {:%d/%m/%Y}",
         "format": " {:%H:%M}"
     },
-    "tray": {
-        "icon-size": 21,
-        "spacing": 10
-    },
+
     "custom/lock": {
         "tooltip": false,
         "on-click": "sh -c '(sleep 0.5s; swaylock --grace 0)' & disown",

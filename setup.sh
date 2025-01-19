@@ -9,15 +9,19 @@ git clone https://github.com/WebmasterTD/uConCat.git
 apt install stow -y
 stow dotfiles
 
-apt install sway -y
-apt install xwayland -y
+sway
+xwayland 
 
 
-apt install waybar -y
-apt install fonts-font-awesome -y
+waybar
+fonts-font-awesome
+
+pulseaudio pavucontrol
 
 
-# apt install wofi -y
-apt install tofi -y
+# wofi
+tofi
 
-apt install sway-notification-center
+sway-notification-center
+
+wlogout
