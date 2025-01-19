@@ -6,7 +6,7 @@
     // Order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
     // "modules-center": ["sway/window"],
-    "modules-right": ["network", "pulseaudio", "backlight", "battery", "clock", "custom/lock", "custom/power"],
+    "modules-right": ["network", "pulseaudio", "backlight", "battery", "clock", "custom/power"],
 
     "sway/workspaces": {
         "format": "{icon}",
@@ -76,11 +76,6 @@
         "format": " {:%H:%M}"
     },
 
-    "custom/lock": {
-        "tooltip": false,
-        "on-click": "sh -c '(sleep 0.5s; swaylock --grace 0)' & disown",
-        "format": ""
-    },
     "custom/power": {
         "tooltip": false,
         "on-click": "wlogout &",
