@@ -46,7 +46,6 @@
 #backlight,
 #battery,
 #clock,
-#custom-lock,
 #custom-power {
   background-color: @surface0;
   padding: 0.5rem 1rem;
