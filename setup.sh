@@ -25,3 +25,10 @@ tofi
 sway-notification-center
 
 wlogout
+
+#sleep
+cpulimit sysstat wlr-randr
+
+
+/etc/systemd/logind.conf
+HandlePowerKey=ignore

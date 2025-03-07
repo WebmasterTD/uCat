@@ -63,6 +63,9 @@ include /etc/sway/config-vars.d/*
 #
 # Basics:
 #
+    # Power off
+    bindsym XF86_PowerOff exec notify-send POWER_BUTTON
+
     # Start a terminal
     bindsym $mod+Return exec $term
 
