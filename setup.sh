@@ -4,27 +4,32 @@ apt update
 apt upgrade
 
 apt install git -y
-git clone https://github.com/WebmasterTD/uConCat.git
-
-apt install stow -y
-stow dotfiles
+gh
+stow
+chromium-browser
+neovim
 
 sway
-xwayland 
-
-
 waybar
+
 fonts-font-awesome
+fonts-noto
 
-pulseaudio pavucontrol
+pulseaudio
+pulsemixer
 
 
-# wofi
 tofi
 
 sway-notification-center
 
 wlogout
+
+#link config files
+stow dotfiles
+
+
+
 
 #sleep
 cpulimit sysstat wlr-randr
